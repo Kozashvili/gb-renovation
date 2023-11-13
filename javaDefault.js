@@ -141,6 +141,4 @@ document.querySelector(".card-container").addEventListener("touchmove", (e) => {
 document.querySelector(".card-container").addEventListener("touchend", () => {
   isSwiping = false;
 });
-/* Card MobileSwpiong Javascript ends here */
 
-//review animation JavaScript
