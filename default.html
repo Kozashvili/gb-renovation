@@ -47,58 +47,56 @@
         Services that we <span class="offer-span">offer</span>
       </h5>
     </div>
-    <div class="services-card-container">
-      <!-- Card 1 -->
-      <div class="services-card cardN1">
-        <div class="card-content">
-          <h2 class="services-headers">Scratched Glass Repair</h2>
-          <a class="services-links" href="./default.html">View More</a>
-        </div>
+    <div class="slideshow-container1">
+
+      <div class="mySlides fade">
+        <img src="./images/brokenGlass.jpg" style="width:100%">
+        <div class="text"><h3>Scratched Glass Repair</h3> <button><a href="./scrGlass.html">view more</a></button></div>
+      </div>
+    
+      <div class="mySlides fade">
+        
+        <img src="images/sprayingCard.jpg" style="width:100%">
+        <div class="text"><h3>On-Site Paint Spraying Repairs</h3> <button>View more</button></div>
+      </div>
+    
+      <div class="mySlides fade">
+      
+        <img src="images/SurfaceRemovalCard.jpg" style="width:100%">
+        <div class="text"><h3>Surface Contamination Removal</h3> <button>view more</button></div>
+      </div>
+      
+      <div class="mySlides fade">
+        
+        <img src="images/Grinderremovalcard.jpg" style="width:100%">
+        <div class="text"><h3>Grinder, Weld Plasma Spatter Removal</h3> <button>view more</button></div>
       </div>
 
-      <!-- Card 2 -->
-      <div class="services-card cardN2">
-        <div class="card-content">
-          <h2 class="services-headers">On-Site Paint Spraying Repairs</h2>
-          <a class="services-links" href="./default.html">View More</a>
-        </div>
+      <div class="mySlides fade">
+       
+        <img src="images/cchipnshellcard.jpg" style="width:100%">
+        <div class="text"><h3>Chip Shell Repairs</h3> <button>view more</button></div>
       </div>
 
-      <!-- Card 3 -->
-      <!-- Add similar structures for the remaining cards... -->
-
-      <div class="services-card cardN3">
-        <div class="card-content">
-          <h2 class="services-headers">Surface Contamination Removal</h2>
-          <a class="services-links" href="./default.html">View More</a>
-        </div>
+      <div class="mySlides fade">
+        <img src="images/woodWorking.jpg" style="width:100%">
+        <div class="text"><h3>Scratched Wood Repair</h3> <button>view more</button></div>
       </div>
-
-      <!-- Card 4 -->
-      <div class="services-card cardN4">
-        <div class="card-content">
-          <h2 class="services-headers">Grinder, Weld Plasma Spatter Removal</h2>
-          <a class="services-links" href="./default.html">View More</a>
-        </div>
-      </div>
-
-      <!-- Card 5 -->
-      <div class="services-card cardN5">
-        <div class="card-content">
-          <h2 class="services-headers">Chip Shell Repairs</h2>
-          <a class="services-links" href="./default.html">View More</a>
-        </div>
-      </div>
-
-      <!-- Card 6 -->
-      <div class="services-card cardN6">
-        <div class="card-content">
-          <h2 class="services-headers">Scratched Wood Repair</h2>
-          <a class="services-links" href="./default.html">View More</a>
-        </div>
-      </div>
-
-      <!-- Add similar structures for the remaining cards... -->
+    
+      <!-- Next and previous buttons -->
+      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+      <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+    <br>
+    
+    <!-- The dots/circles -->
+    <div style="text-align:center">
+      <span class="dot" onclick="currentSlide(1)"></span>
+      <span class="dot" onclick="currentSlide(2)"></span>
+      <span class="dot" onclick="currentSlide(3)"></span>
+      <span class="dot" onclick="currentSlide(4)"></span>
+      <span class="dot" onclick="currentSlide(5)"></span>
+      <span class="dot" onclick="currentSlide(6)"></span>
     </div>
     <section class="about-us">
       <div class="header-conainers">
@@ -138,18 +136,32 @@
           <span class="highlight">furniture</span>, and much more.
         </p>
       </div>
+      
     </section>
-
-    <div>
+  </div>
+  <div class="container-thrimg">
+    <div class="inside-container-thrimg">
+        <img class="img1-thrimg" src="./images/OneWorker.png" alt="">
+    </div>
+    <div class="inside-container-thrimg">
+        <img class="img2-thrimg" src="./images/AAtest.jpg" alt="">
+    </div>
+    <div class="inside-container-thrimg">
+           
+    <img class="img3-thrimg" src="./images/twoWorkers.jpg" alt="">
+    </div>
+</div>
+    <div class="interest-why">
+    <div class="interest-main">
       <div class="header-conainers interest-highliter">
-        <div class="blue-squeare"></div>
+        <div class="blue-squeare interest-blue"></div>
         <h5 class="interest-header">
           Our <span class="offer-span"> company interest </span>includes
           following:
         </h5>
       </div>
       <div class="inside-layout">
-        <div class="interest-containers">
+        <div id="interest-no1" class="interest-containers">
           <div class="n1 squeares">1</div>
           <div class="inerest-pcontainers">
             <p class="interest-p">
@@ -213,10 +225,10 @@
         </p>
       </div>
     </div>
-
+  </div>
     <div class="value-container">
       <div class="header-conainers interest-highliter">
-        <div class="blue-squeare"></div>
+        <div id="service-squeare" class="blue-squeare"></div>
         <h5 class="service-intro">
           <span class="offer-span">Time</span>,
           <span class="offer-span">Precision</span> and
@@ -388,6 +400,7 @@
     <script src="./javaDefault.js"></script>
     <script src="./reviewJavascript.js"></script>
     <script src="./cookies.js"></script>
+    <script src="./slides.js"></script>
   </body>
 </html>
 

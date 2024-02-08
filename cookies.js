@@ -25,6 +25,9 @@ cookieMessage = () => {
 };
 window.addEventListener("load", cookieMessage);
 // Function to set analytics cookies
+// ... (your existing code)
+
+// Function to set analytics cookies
 setAnalyticsCookies = () => {
   // Replace these values with your actual analytics data
   const analyticsData = {
@@ -56,6 +59,8 @@ getAnalyticsData = () => {
 // Example usage:
 setAnalyticsCookies(); // Call this when you want to set analytics cookies
 
-// Get analytics data and log it (you can use this data as needed)
+// Get analytics data and log the pagesVisited array
 const analyticsData = getAnalyticsData();
-console.log("Analytics Data:", analyticsData);
+console.log("Pages Visited:", analyticsData.pagesVisited);
+
+

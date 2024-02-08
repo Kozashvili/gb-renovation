@@ -89,7 +89,7 @@ document.getElementById("image-link").onload = function () {
 
   try {
     // Create a Vibrant.js instance
-    var vibrant = new Vibrant(document.getElementById("image"));
+    var vibrant = new vibrant(document.getElementById("image"));
 
     // Get the color palette
     var swatches = vibrant.swatches();

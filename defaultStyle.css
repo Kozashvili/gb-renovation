@@ -219,7 +219,7 @@ button {
   position: relative;
   left: 44px;
   top: 55px;
-  font-size: 22px;
+  font-size: clamp(18px, 3.4783vw + 0.3043rem, 3rem);
 }
 .close-btn {
   font-family: Helvetica,Arial,sans-serif;
@@ -230,7 +230,7 @@ button {
   top: 27px;
   right: 44px;
   color: floralwhite;
-  font-size: 15px;
+  font-size: clamp(15px, 3.4783vw + 0.3043rem, 3rem);
   cursor: pointer;
 }
 
@@ -321,7 +321,7 @@ button {
 }
 
 .service-intro {
-    font-size: 18px;
+  font-size: clamp(18px, 2.1783vw + 0.3043rem, 3rem);
     color: black;
 }
 .blue-squeare {
@@ -331,127 +331,106 @@ button {
 }
 .offer-span {
     color: #566D7E;
-    font-size: 20px;
+    font-size: clamp(18px, 2.3783vw + 0.6043rem, 3rem);
     font-weight: 720;
     letter-spacing: 1px;
     text-shadow: 0.3px 0.3px 0.3px #145214;
     transform: perspective(100px) rotateX(10deg);
 }
 
-.services-card-container{
-  display: flex;
-  overflow-x: scroll;
-  min-width: 300px;
-  height: auto;
-  width: 100%;
-  gap: 30px;
-  scrollbar-width: thin; /* Firefox */
-  -ms-overflow-style: none; /* Internet Explorer/Edge */
-}
-.services-card-container::-webkit-scrollbar {
-  display: none; /* Chrome, Safari, and Opera */
-}
-
-.services-card{
-  flex: 0 0 95%;
-  display: flex;
-  height: 30vh;
-  background-color: #f2f2f2;
-  background-position: center;
-  background-repeat: none;
-  background-size: cover;
-  position: relative; /* Required for overlay text */
-}
-
-.services-card .card-content {
-  position: absolute;
-  top: -17px;
-  left: 50%;
-  transform: translateX(-110%);
-  text-align: center;
-  color: #ffffff;
-  z-index: 2;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-evenly;
-  height: 100%;
-}
-.services-card::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  z-index: 1;
- 
-}
-.services-card.cardN1::before {
-  background-image: url('./images/scratchedwidnowcard.jpg');
-  background-repeat: no-repeat;
-
-}
-
-.services-card.cardN2::before {
-  background-image: url('./images/sprayingCard.jpg');
-}
-
-.services-card.cardN3::before {
-  background-image: url('./images/SurfaceRemovalCard.jpg');
-}
-
-.services-card.cardN4::before {
-  background-image: url('./images/Grinderremovalcard.jpg');
-}
-
-.services-card.cardN5::before {
-  background-image: url('./images/cchipnshellcard.jpg');
-}
-
-.services-card.cardN6::before {
-  background-image: url('./images/woodWorkingsmall.jpg');
-
-}
-
-
-.services-card::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(106deg, rgb(0 0 0 / 83%) 45%, rgba(255, 0, 0, 0) 75%);
-  background-repeat: no-repeat;
-  z-index: 1;
-}
-.services-headers {
-  color: #566D7E;
-  width: 70%;
-  text-align: left;
-  font-size: 18px;
-  line-height: 0.95;
-  font-weight: 600;
-  text-shadow: 0 0 2px rgba(52, 152, 219, 1);
-}
-.services-links {
-  text-decoration: none;
+.slideshow-container1 {
+  max-width: 1000px;
+  height: 28vh;
+  min-height: 240px;
   position: relative;
-  color: #ffffff;
-  top: 15%;
-  width: 120px;
-  text-align: center;
-  border-radius: 30px;
-  background: #566D7E;
-  font-size: 16px;
-  display: flex;
-  height: 30px;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 1px 2px 1px #484848, 2px 1px 1px #626262;
+  margin: auto;
 }
+
+/* Hide the images by default */
+.mySlides {
+  border-radius: 30px;
+  height: 100%;
+  display: none;
+  overflow: hidden;
+  min-height: 100%;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+
+
 .about-us {
   width: 100%;
   height: auto;
@@ -477,7 +456,7 @@ button {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 .about-us-header{
-  font-size: 18px;
+    font-size: clamp(18px, 3.4783vw + 0.3043rem, 3rem); font-size: clamp(18px, 3.4783vw + 0.3043rem, 3rem);;
     letter-spacing: 1.2px;
     font-weight: 900;
     color: rgb(0, 0, 0);
@@ -490,14 +469,14 @@ button {
   margin-bottom: 10px;
   line-height: 1.13199;
   letter-spacing: -0.022em;
-  font-size: 18px;
+  font-size: clamp(18px, 2.2783vw + 0.3043rem, 3rem);
   font-weight: 400;
   color: #566D7E;
 }
 .company-name {
   letter-spacing: 0;
   font-weight: 700;
-  font-size: 19px
+  font-size: clamp(19px, 2.2783vw + 0.3043rem, 3.2rem);
 }
 .highlight {
   font-weight: 600;
@@ -509,7 +488,7 @@ button {
   min-height: 250px;
   max-height: 260px;
   min-width: 350px;
-  max-width: 550px;
+  max-width: 600px;
   position: relative;
   overflow: hidden;
 }
@@ -563,7 +542,7 @@ button {
   margin: auto;
 }
 .user {
-  font-size: 12px;
+  font-size: clamp(12px, 3.4783vw + 0.3043rem, 3rem);
   margin-right: 30px ;
 }
 .user-circle {
@@ -590,7 +569,7 @@ button {
 }
 .comment-para {
   width: 95%;
-  font-size: 16px;
+  font-size: clamp(16px, 1.9883vw + 0.3043rem, 3rem);
   color: #ffffff;
   font-weight: 500;
   letter-spacing: 0.022em;
@@ -638,9 +617,10 @@ button {
 }
 .squeares {
   width: 45px;
+  max-width: 60px;
   height: 60px;
   background: #566D7E;
-  font-size: 20px;
+  font-size: clamp(20px, 3.4783vw + 0.3043rem, 3rem);
   font-weight: bold;
   color: white;
   text-align: center;
@@ -649,18 +629,21 @@ button {
   align-items: center;
   justify-content: center;
 }
+.header-conainers {
+  align-items: center;
+}
 .interest-highliter {
   margin-bottom: 30px;
 }
 .interest-p {
-  font-size: 14px;
+  font-size: clamp(18px, 1.3783vw + 0.3043rem, 3rem);
   font-weight: 800;
   letter-spacing: 0.022em;
   color: #566D7E;
   margin: 0; /* Remove default margin from <p> */
 }
 .interest-header {
-  font-size: 18px;
+  font-size: clamp(18px, 2.1783vw + 0.5043rem, 3rem);
   font-weight: 600;
   }
 
@@ -700,7 +683,7 @@ button {
   .span-social {
     margin-right: 10px; /* Add some spacing between the text and the images */
     color: #c9c9c9;
-    font-size: 12.8px;
+    font-size: clamp(12.8px, 2.9783vw + 0.3043rem, 3rem);
     font-weight: 900;
     margin-bottom: 6px;
     line-height: 1.8212;
@@ -713,7 +696,7 @@ button {
   }
   .a-services {
     text-decoration: none;
-    font-size: 11.8px;
+    font-size: clamp(11px, 1.8783vw + 0.3043rem, 3rem);
     color: #9c9b9b;
     font-weight: 200;
     line-height: 1.567;
@@ -726,7 +709,7 @@ button {
   }
   .ending-header {
     color: #c9c9c9;
-    font-size: 12.8px;
+   font-size: clamp(12.8px, 2.8783vw + 0.3043rem, 3rem);
     font-weight: 900;
     margin-bottom: 6px;
     line-height: 1.8212;
@@ -746,7 +729,7 @@ button {
     align-items: center;
     width: 90%;
     height: 100%;
-    max-height: 600px;
+    max-height: 900px;
     margin: auto;
     padding-top: 20px;
     background-color: #566D7E;
@@ -754,12 +737,12 @@ button {
   }
   .why-us-p {
     width: 80%;
-    height: 95%;
+    height: 99%;
     margin: auto;
     margin-bottom: 10px;
     line-height: 1.13199;
     letter-spacing: -0.022em;
-    font-size: 18px;
+    font-size: clamp(18px, 2.2783vw + 0.3043rem, 3rem);
     font-weight: 400;
     color: #f2f2f2;
   }
@@ -793,7 +776,7 @@ button {
     margin-bottom: 10px;
     line-height: 1.13199;
     letter-spacing: -0.022em;
-    font-size: 18px;
+    font-size: clamp(18px, 3.4783vw + 0.3043rem, 3rem);
     font-weight: 400;
     color: #566D7E;
   }
@@ -830,11 +813,14 @@ button {
 #cookies-btn {
   border-radius: 4px;
   padding: 8px 12px 8px 12px;
-  font-size: 1rem;
+  font-size: clamp(1rem, 3.4783vw + 0.3043rem, 3rem);
   cursor: pointer;
   border: 3px solid rgb(255, 255, 255);
   background-color: #000000;
   color: #ffffff;
+}
+.condition-links {
+  font-size: clamp(1rem, 2.2783vw + 0.3043rem, 3rem);
 }
 
 /* cookies end*/
@@ -851,4 +837,215 @@ button {
 .condition-links {
   text-decoration: none;
   color: #000000;
+}
+.container-thrimg{
+  display: flex;
+  align-items: center;
+  max-width: 375px;
+  margin: 20px 0px 130px 0px
+}
+.img1-thrimg{
+  height: 100%;
+  width: 100%;
+  position: relative;
+  left: 51px;
+  animation-name: img1;
+  animation-duration: 6s;
+  animation-iteration-count: infinite;
+}
+.img2-thrimg {
+  height: 120%;
+  width: 120%;
+  position: relative;
+  top: 43px;
+  animation-name: img2;
+  animation-duration: 6s;
+  animation-iteration-count: infinite;
+}
+.img3-thrimg {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  right: 30px;
+  top: 82px;
+  animation-name: img3;
+  animation-duration: 6s;
+  animation-iteration-count: infinite;
+}
+@keyframes img1 {
+0% {
+  transform: scale(1);
+  z-index: 0;
+}
+5% {
+  transform: scale(1.2);
+  z-index: 1;
+}
+
+35% {
+  transform: scale(1);
+  z-index: 0;
+}
+
+}
+@keyframes img2 {
+0% {
+  z-index: 0;
+}
+30% {
+  transform: scale(1);
+  z-index: 0;
+}
+35% {
+  transform: scale(1.2);
+  z-index: 1;
+}
+70% {
+  transform: scale(1);
+  z-index: 0;
+}
+
+}
+@keyframes img3 {
+  0% {
+      z-index: 0;
+  }
+  65% {
+      transform: scale(1);
+      z-index: 0;
+   }
+  70% {
+      transform: scale(1.2);
+      z-index: 1;
+  }
+  100% {
+      transform: scale(1);
+      z-index: 0;
+  }
+}
+@media screen and (min-width: 768px) {
+  .starter-containter {
+    padding: 10px;
+  }
+  .slideshow-container {
+    height: 50vh;
+  }
+  .services-card-container {
+    gap: 100px;
+    height: 50vh;
+    scrollbar-width: thin;
+    -ms-overflow-style: none;
+  }
+  .services-links {
+    width: 120px;
+    height: 35px;
+  }
+  .blue-squeare {
+    width: 15px;
+    height: 47px;
+  }
+  .interest-why {
+    display: flex;
+    flex-direction: row;
+  }
+  .about-us {
+    gap: 25px;
+  }
+  .about-us-insider{
+    gap: 35px;
+    max-height: none;
+    width: 55%;
+    margin-left: 10px;
+  }
+  .interest-main {
+    width: 50%;
+    position: relative;
+    bottom: 138px;
+  }
+  .why-us-insider{
+    max-height: none;
+    width: 91%;
+    perspective: 200px;
+  }
+  .why-us-container {
+    position: relative;
+    top: 77px;
+  }
+  .service-intro-container{
+    margin-top: 150px;
+  }
+  .about-us {
+    margin-bottom: 150px;
+  } 
+  .inside-layout{
+    gap: 50px;
+    margin-top: 80px;
+  }
+  .interest-containers{
+    height: auto;
+  }
+  .squeares {
+    height: 72px;
+  }
+  #service-squeare{
+    width: 25px;
+    height: 89px
+  }
+  .value-insider {
+    margin-bottom: 50px;
+  }
+  .review-container{
+    margin-top: 80px;
+  }
+  .end-section{
+    height: auto;
+  }
+  .links-img {
+    width: 60px;
+    height: 60px;
+  }
+  .conditions-container{
+    width: 50%;
+    margin: auto;
+    margin-top: 40px;
+    margin-bottom: 20px;
+  }
+ 
+}
+
+
+@media screen and (min-width: 1440px) {
+  .services-links {
+    width: 59%;
+    height: 81px;
+  }
+  .interest-why {
+    display: flex;
+    height: auto;
+    flex-direction: row;
+    margin: auto;
+    margin-bottom: 100px;
+    justify-content: space-evenly;
+}
+  .interest-main {
+    display: flex;
+    flex-direction: column;
+  }
+  .squeares {
+    height: 250px;
+  }
+  .interest-highliter {
+    margin-left: 35px
+  }
+  .interest-blue {
+    width: 60px;
+    height: 110px;
+  }
+  .about-us-insider {
+    width: 80%;
+  }
+  .inside-layout {
+    gap: 50px;
+    margin-top: 80px;
+  }
 }
